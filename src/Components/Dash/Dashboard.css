@@ -93,7 +93,7 @@ body {
 
 .wrapper .sidebar {
   width: 225px;
-  height: 130%;
+  height: 140%;
   background: #4d4f5c;
   padding: 15px 0px;
   position: absolute;
@@ -176,7 +176,8 @@ body {
 }
 
 .top-dash-grid {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  column-gap:5%;
   border-top: 1px solid #cecdcd;
   border-bottom: 1px solid #cecdcd;
   border-right: 1px solid #cecdcd;
@@ -195,36 +196,51 @@ body {
   border-bottom-right-radius: 10px;
 }
 
+.widget-title-container{
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  height: 160px;
+  padding:10px;
+}
+
+.widget-container{ 
+  display: flex;
+  justify-content: space-evenly;
+  
+  padding:10px;
+  
+  
+}
+
 .widget-title {
   font-size: 13px;
   font-weight: bolder;
-}
-.widget-logo {
-  height: 80px;
+  
 }
 
-.widget-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
-.item2 {
-  margin-left: 25px;
-}
+
+
 .widget-info {
-  margin-left: 20px;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
   color: #4d4f5c;
 }
 
 .widget-review {
   font-size: 11px;
+  
 }
 .widget-review-count {
-  font-size: 14px;
+  
+  font-size: 25px;
   color: #cf3506;
 }
 
 .widget-btn {
-  background-color: #f9a980; /* Green */
+  background-color: #f9a980; 
   border: none;
   color: navy;
   padding: 6px 22px;
@@ -273,7 +289,7 @@ body {
   border-left: 3px solid #dadada;
   border-left-color: #53266a;
   background-color: #f9f9f9;
-  height: 350px;
+  height: 400px;
   margin: 0px 20px 30px 20px;
   display: grid;
   align-items: center;
@@ -287,6 +303,7 @@ body {
 .bottom-widget-info-grid {
   margin: 0px 30px 0px 30px;
 }
+
 
 .chart-Title {
   font-size: 12px;

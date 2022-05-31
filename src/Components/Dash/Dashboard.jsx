@@ -3,7 +3,7 @@ import "./Dashboard.css";
 import SubjectOutlinedIcon from "@mui/icons-material/SubjectOutlined";
 import alfaLogo from "./alfa.png";
 import widgetLogo1 from "./w1.PNG";
-import Barchart from "./Barchart";
+
 import { UserData } from "./Data";
 import { useState } from "react";
 import Chart from "react-apexcharts";
@@ -20,12 +20,12 @@ function Dashboard() {
           "#ecf0f1",
           "#50AF95",
           "#f3ba2f",
-          "#2a71d0"
+          "#2a71d0",
         ],
         borderColor: "black",
-        borderWidth: 2
-      }
-    ]
+        borderWidth: 2,
+      },
+    ],
   });
 
   return (
@@ -65,29 +65,29 @@ function Dashboard() {
           <ul>
             {/* Nav Menu */}
             <li>
-              <a href="http://localhost:3000" id="dashboard">
+              <a href="#" id="dashboard">
                 DASHBOARD
               </a>
             </li>
             <li>
-              <a href="http://localhost:3000">TRUE MATCH</a>
+              <a href="#">TRUE MATCH</a>
             </li>
             <li>
-              <a href="http://localhost:3000">FALSE POSITIVE</a>
+              <a href="#">FALSE POSITIVE</a>
             </li>
             <li>
-              <a href="http://localhost:3000">PENDING ANALYST REVIEW</a>
+              <a href="#">PENDING ANALYST REVIEW</a>
             </li>
             <li>
-              <a href="http://localhost:3000">REVIEWED ALERTS</a>
+              <a href="#">REVIEWED ALERTS</a>
             </li>
             <li>
-              <a href="http://localhost:3000">CONTACT/ SUPPORT</a>
+              <a href="#">CONTACT/ SUPPORT</a>
             </li>
 
             {/* Logo and Credit */}
             <li>
-              <a href="http://localhost:3000" className="alfaLogo">
+              <a href="#" className="alfaLogo">
                 <img src={alfaLogo} height="50px" alt="Logo"></img>
               </a>
             </li>
@@ -107,52 +107,45 @@ function Dashboard() {
             </p>
           </div>
           <div className="top-dash-grid">
-            <div className="widget-info-grid">
-              <div className="widget-picture">
-                {" "}
-                <img className="widget-logo" src={widgetLogo1} alt=""></img>
-              </div>
-              <div className="widget-info">
-                <p className="widget-title">ALERT PENDING MANUAL REVIEW</p>
-                <p className="widget-review">
-                  <b>
-                    TOTAL ALERT PENDING MANUAL REVIEW :
-                    <span className="widget-review-count"> 20</span>{" "}
-                  </b>
-                </p>
-                <p className="widget-btn">REVIEW</p>
+            <div className="widget-title-container">
+              <p className="widget-title">RECENT PENDING REVIEWS</p>
+              <div className="widget-container">
+                <div className="widget-info-grid">
+                  <div className="widget-info">
+                    <p className="widget-review">
+                      <b>PENDING MANUAL REVIEW</b>
+                    </p>
+                    <p className="widget-review-count"> 20</p>
+                    <p className="widget-btn">REVIEW</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="widget-info-grid item2">
-              <div className="widget-picture">
-                {" "}
-                <img className="widget-logo" src={widgetLogo1} alt=""></img>
-              </div>
-              <div className="widget-info">
-                <p className="widget-title">FALSE POSITIVE</p>
-                <p className="widget-review">
-                  <b>
-                    TOTAL FALSE POSITIVE ALERTS :
-                    <span className="widget-review-count"> 20</span>{" "}
-                  </b>
-                </p>
-                <p className="widget-btn">REVIEW</p>
-              </div>
-            </div>
-            <div className="widget-info-grid">
-              <div className="widget-picture">
-                {" "}
-                <img className="widget-logo" src={widgetLogo1} alt=""></img>
-              </div>
-              <div className="widget-info">
-                <p className="widget-title">TRUE MATCH</p>
-                <p className="widget-review">
-                  <b>
-                    TOTAL TRUE MATCH ALERTS :
-                    <span className="widget-review-count"> 20</span>{" "}
-                  </b>
-                </p>
-                <p className="widget-btn">REVIEW</p>
+            <div className="widget-title-container">
+              <p className="widget-title">RECENT ALERTS LAST 7 DAYS</p>
+
+              <div className="widget-container">
+                <div className="widget-info-grid ">
+                  <div className="widget-info">
+                   
+                    <p className="widget-review">
+                      <b>FALSE POSITIVE</b>
+                    </p>
+                    <p className="widget-review-count"> 20</p>
+                    <p className="widget-btn">REVIEW</p>
+                  </div>
+                </div>
+
+                <div className="widget-info-grid">
+                  <div className="widget-info">
+                   
+                    <p className="widget-review">
+                      <b>TRUE MATCH</b>
+                    </p>
+                    <p className="widget-review-count"> 20</p>
+                    <p className="widget-btn">REVIEW</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -168,50 +161,50 @@ function Dashboard() {
           </div>
           <div className="bottom-dash-grid">
             <div className="bottom-widget-info-grid">
-              <div style={{ width: 450 }}>
+              <div className="bottom-widget-chart">
                 <Chart
                   type="bar"
                   series={[
                     {
                       name: "Total Alerts",
                       data: [100, 200, 232, 132, 422, 132, 350],
-                      color: "#A3A1FB"
+                      color: "#A3A1FB",
                     },
                     {
                       name: "%AI Proccessed",
                       data: [150, 230, 332, 162, 302, 302, 540],
-                      color: "#56D9FE"
+                      color: "#56D9FE",
                     },
                     {
                       name: "%False Positive",
                       data: [134, 250, 290, 120, 482, 532, 150],
-                      color: "#26FB42"
+                      color: "#26FB42",
                     },
                     {
                       name: "%True Match",
                       data: [167, 260, 360, 101, 110, 602, 102],
-                      color: "#FF4E61"
-                    }
+                      color: "#FF4E61",
+                    },
                   ]}
                   options={{
                     dataLabels: {
-                      enabled: false
+                      enabled: false,
                     },
                     chart: {
                       stacked: true,
                       background: "#f5f5f5",
                       toolbar: {
-                        show: false
-                      }
+                        show: false,
+                      },
                     },
                     plotOptions: {
                       bar: {
-                        borderRadius: 5
-                      }
+                        borderRadius: 5,
+                      },
                     },
 
                     tooltip: {
-                      followCursor: true
+                      followCursor: true,
                     },
                     xaxis: {
                       tickPlacement: "on",
@@ -222,98 +215,97 @@ function Dashboard() {
                         "Day 4",
                         "Day 5",
                         "Day 6",
-                        "Day 7"
-                      ]
+                        "Day 7",
+                      ],
                     },
                     legend: {
                       show: true,
-                      position: "top"
+                      position: "top",
                     },
                     title: {
                       text: "REVIEWED ALERT LAST(7 Days)",
                       style: {
                         fontSize: 12,
-                        color: "#808080"
-                      }
+                        color: "#808080",
+                      },
                     },
                     grid: {
-                      borderColor: "#f0eded"
-                    }
+                      borderColor: "#f0eded",
+                    },
                   }}
                 ></Chart>
               </div>
             </div>
             <div className="bottom-info-grid item2">
-              <div style={{ width: 450 }}>
+              <div>
                 <Chart
                   type="bar"
                   series={[
                     {
                       name: "Total Alerts",
                       data: [100, 200, 232],
-                      color: "#A3A1FB"
+                      color: "#A3A1FB",
                     },
                     {
                       name: "%AI Proccessed",
                       data: [150, 230, 332],
-                      color: "#56D9FE"
+                      color: "#56D9FE",
                     },
                     {
                       name: "%False Positive",
                       data: [134, 250, 290],
-                      color: "#26FB42"
+                      color: "#26FB42",
                     },
                     {
                       name: "%True Match",
                       data: [167, 260, 360],
-                      color: "#FF4E61"
-                    }
+                      color: "#FF4E61",
+                    },
                   ]}
                   options={{
                     dataLabels: {
-                      enabled: false
+                      enabled: false,
                     },
                     chart: {
                       stacked: true,
                       background: "#f5f5f5",
                       toolbar: {
-                        show: false
-                      }
+                        show: false,
+                      },
                     },
                     plotOptions: {
                       bar: {
-                        borderRadius: 5
-                      }
+                        borderRadius: 5,
+                      },
                     },
 
                     tooltip: {
-                      followCursor: true
+                      followCursor: true,
                     },
                     xaxis: {
                       tickPlacement: "on",
                       categories: [
                         "Month to Date",
                         "Quater to Date",
-                        "Year to Date"
-                      ]
+                        "Year to Date",
+                      ],
                     },
 
                     legend: {
                       show: true,
-                      position: "top"
+                      position: "top",
                     },
                     title: {
-                      text:
-                        "REVIEWED ALERT (Month to Date, Quarter to Date, Year to Date)",
+                      text: "REVIEWED ALERT (Month to Date, Quarter to Date, Year to Date)",
                       // text: "REVIEWED ALERT",
                       style: {
                         fontSize: 12,
-                        color: "#808080"
-                      }
+                        color: "#808080",
+                      },
                     },
                     grid: {
-                      borderColor: "#f0eded"
-                    }
+                      borderColor: "#f0eded",
+                    },
                   }}
                 ></Chart>
               </div>
